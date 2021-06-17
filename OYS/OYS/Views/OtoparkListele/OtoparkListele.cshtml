@@ -1,0 +1,57 @@
+﻿@using OYS.Models.veritabani
+@model List<OTOPARKLAR>
+@{
+    ViewBag.Title = "OtoparkListele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Section 1 Bitiş-->
+<div class="container">
+    <div class="row">
+        <div class="col m12 s12">
+            <h4>OTOPARKLAR</h4>
+        </div>
+            @using (Html.BeginForm("OtoparkListele", "OtoparkListele", FormMethod.Get))
+            {
+                <p>
+                    Otopark Ara : @Html.TextBox("p")
+                    <input id="otopark_arama" type="submit" value="Ara" />
+                </p>
+            }
+        
+            <div class="col m12 s12">
+                <table class="highlight responsive-table">
+                    <thead>
+                        <tr>
+                            <th>OTOPARK NO</th>
+                            <th>OTOPARK ADI</th>
+                            <th>ADRES</th>
+                            <th>UCRETLENDİRME</th>
+                            <th>KAPASİTE</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var itemm in Model)
+                        {
+                            <tr>
+                                <td>@itemm.otoparkID</td>
+                                <td>@itemm.otoparkAdi</td>
+                                <td>@itemm.otoparkAdres</td>
+                                <td>@itemm.ucretlendirme</td>
+                                <td>@itemm.otoparkKapasite</td>
+                                <td><a href="/OtoparkListele/idBul/@itemm.otoparkID" class="waves-effect waves-light btn">SEÇ</a></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<br />
+<br />
+<br />
+

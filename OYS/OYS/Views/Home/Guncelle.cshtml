@@ -1,0 +1,62 @@
+﻿@model OYS.Models.veritabani.UYELER
+
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="section">
+
+        <div class="row">
+            <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h4>Kullanıcı Bilgileri</h4>
+                <p class="center light">Verilerinizi Güncelleyebilirsiniz</p>
+                <hr class="hr">
+                @using (Html.BeginForm("Guncelle", "Home", FormMethod.Post))
+
+                {
+                    @Html.TextBoxFor(m => m.uyeID, new { @class = "validate hide" })
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            @Html.TextBoxFor(m => m.uyeAdi, new { @class = "validate " })
+                            <label for="uyeAdi" class="active">İsim</label>
+                        </div>
+                        <div class="input-field col s6">
+                            @Html.TextBoxFor(m => m.uyeSoyadi, new { @class = "validate " })
+                            <label for="uyeSoyadi" class="active">Soyisim</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">people_outline</i>
+                            @Html.TextBoxFor(m => m.uyeEmail, new { @class = "validate " })
+                            <label for="uyeEmail" class="active">Email Adresi</label>
+                        </div>
+                        <div class="input-field col s6">
+                            @Html.TextBoxFor(m => m.uyeTelefon, new { @class = "validate " })
+                            <label for="uyeTelefon" class="active">Telefon Numarası</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            @Html.TextBoxFor(m => m.uyeKullaniciAdi, new { @class = "validate " })
+                            <label for="uyeKullaniciAdi" class="active">Kullanıcı Adı</label>
+                        </div>
+                        <div class="input-field col s6">
+                            @Html.TextBoxFor(m => m.uyeSifre, new { @class = "validate " })
+                            <label for="uyeSifre" class="active">Şifre</label>
+                        </div>
+                    </div>
+                    <div class="col m12 s12">
+                        <button class="waves-effect waves-light btn btn-small red lighten-2"><i class="material-icons left">chevron_right</i><i class="material-icons right">chevron_left</i>Guncelle</button>
+                    </div>}
+            </div>
+        </div>
+    </div>
+</div>
+

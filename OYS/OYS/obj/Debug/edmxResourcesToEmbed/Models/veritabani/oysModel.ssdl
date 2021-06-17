@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CIKISLAR">
+    <Key>
+      <PropertyRef Name="cikisID" />
+    </Key>
+    <Property Name="cikisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeID" Type="int" Nullable="false" />
+    <Property Name="otoparkID" Type="int" Nullable="false" />
+    <Property Name="parkYeri" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="cikisSaati" Type="time" Precision="7" Nullable="false" />
+    <Property Name="aracPlaka" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GECMISLER">
+    <Key>
+      <PropertyRef Name="gecmisID" />
+    </Key>
+    <Property Name="gecmisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeID" Type="int" />
+    <Property Name="otoparkID" Type="int" />
+    <Property Name="ucret" Type="int" />
+    <Property Name="girisSaati" Type="time" Precision="7" />
+    <Property Name="cikisSaati" Type="time" Precision="7" />
+    <Property Name="otoparkAdi" Type="varchar" MaxLength="50" />
+    <Property Name="otoparkAdres" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GIRISLER">
+    <Key>
+      <PropertyRef Name="girisID" />
+    </Key>
+    <Property Name="girisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeID" Type="int" Nullable="false" />
+    <Property Name="otoparkID" Type="int" Nullable="false" />
+    <Property Name="aracPlaka" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parkYeri" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="girisSaati" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OTOPARKLAR">
+    <Key>
+      <PropertyRef Name="otoparkID" />
+    </Key>
+    <Property Name="otoparkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="otoparkAdi" Type="varchar" MaxLength="50" />
+    <Property Name="otoparkAdres" Type="varchar" MaxLength="50" />
+    <Property Name="otoparkSahibi" Type="varchar" MaxLength="30" />
+    <Property Name="otoparkKapasite" Type="int" />
+    <Property Name="otoparkIBAN" Type="varchar" MaxLength="10" />
+    <Property Name="ucretlendirme" Type="int" />
+  </EntityType>
+  <EntityType Name="PARKYERLERI">
+    <Key>
+      <PropertyRef Name="parkYeriID" />
+    </Key>
+    <Property Name="parkYeriID" Type="int" Nullable="false" />
+    <Property Name="otoparkID" Type="int" Nullable="false" />
+    <Property Name="parkYeri" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REZERVASYONLAR">
+    <Key>
+      <PropertyRef Name="rezervasyonID" />
+    </Key>
+    <Property Name="rezervasyonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeID" Type="int" />
+    <Property Name="otoparkID" Type="int" />
+    <Property Name="aracPlaka" Type="nvarchar" MaxLength="50" />
+    <Property Name="rezervasyonSaat" Type="time" Precision="7" />
+    <Property Name="parkYeri" Type="nchar" MaxLength="10" />
+    <Property Name="ucret" Type="int" />
+    <Property Name="rezarvasyonTarih" Type="date" />
+  </EntityType>
+  <EntityType Name="UCRETLER">
+    <Key>
+      <PropertyRef Name="ucretID" />
+    </Key>
+    <Property Name="ucretID" Type="int" Nullable="false" />
+    <Property Name="uyeID" Type="int" />
+    <Property Name="girisID" Type="int" />
+    <Property Name="cikisID" Type="int" />
+    <Property Name="otoparkID" Type="int" />
+    <Property Name="ucretlendirme" Type="int" />
+  </EntityType>
+  <EntityType Name="UYELER">
+    <Key>
+      <PropertyRef Name="uyeID" />
+    </Key>
+    <Property Name="uyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeAdi" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="uyeSoyadi" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="uyeEmail" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="uyeTelefon" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="uyeKullaniciAdi" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="uyeSifre" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="OYSModelStoreContainer">
+    <EntitySet Name="CIKISLAR" EntityType="Self.CIKISLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GECMISLER" EntityType="Self.GECMISLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GIRISLER" EntityType="Self.GIRISLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OTOPARKLAR" EntityType="Self.OTOPARKLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARKYERLERI" EntityType="Self.PARKYERLERI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REZERVASYONLAR" EntityType="Self.REZERVASYONLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UCRETLER" EntityType="Self.UCRETLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UYELER" EntityType="Self.UYELER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

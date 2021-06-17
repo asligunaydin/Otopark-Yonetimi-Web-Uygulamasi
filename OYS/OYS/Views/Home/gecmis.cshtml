@@ -1,0 +1,47 @@
+﻿@using OYS.Models.veritabani
+@model List<GECMISLER>
+@{
+    ViewBag.Title = "gecmis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Section 1 Bitiş-->
+<div class="container">
+    <div class="row">
+        <div class="col m12 s12">
+            <h4>Otopark Kullanım Geçmişiniz</h4>
+            <table class="highlight responsive-table">
+                <thead>
+                    <tr>
+                        <th>GEÇMİŞ NO</th>
+                        <th>OTOPARK</th>
+                        <th>ADRES</th>
+                        <th>UCRET</th>
+                        <th>GİRİŞ SAATİ</th>
+                        <th>ÇIKIŞ SAATİ</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var itemm in Model)
+                    {
+                    <tr>
+                        <td>@itemm.gecmisID</td>
+                        <td>@itemm.otoparkAdi</td>
+                        <td>@itemm.otoparkAdres</td>
+                        <td>@itemm.ucret</td>
+                        <td>@itemm.girisSaati</td>
+                        <td>@itemm.cikisSaati</td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+

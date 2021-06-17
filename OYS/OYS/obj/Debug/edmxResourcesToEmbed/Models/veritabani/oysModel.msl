@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OYSModelStoreContainer" CdmEntityContainer="oysEntities2">
+    <EntitySetMapping Name="CIKISLAR">
+      <EntityTypeMapping TypeName="OYSModel.CIKISLAR">
+        <MappingFragment StoreEntitySet="CIKISLAR">
+          <ScalarProperty Name="cikisID" ColumnName="cikisID" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="otoparkID" ColumnName="otoparkID" />
+          <ScalarProperty Name="parkYeri" ColumnName="parkYeri" />
+          <ScalarProperty Name="cikisSaati" ColumnName="cikisSaati" />
+          <ScalarProperty Name="aracPlaka" ColumnName="aracPlaka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GECMISLER">
+      <EntityTypeMapping TypeName="OYSModel.GECMISLER">
+        <MappingFragment StoreEntitySet="GECMISLER">
+          <ScalarProperty Name="gecmisID" ColumnName="gecmisID" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="otoparkID" ColumnName="otoparkID" />
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+          <ScalarProperty Name="girisSaati" ColumnName="girisSaati" />
+          <ScalarProperty Name="cikisSaati" ColumnName="cikisSaati" />
+          <ScalarProperty Name="otoparkAdi" ColumnName="otoparkAdi" />
+          <ScalarProperty Name="otoparkAdres" ColumnName="otoparkAdres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIRISLER">
+      <EntityTypeMapping TypeName="OYSModel.GIRISLER">
+        <MappingFragment StoreEntitySet="GIRISLER">
+          <ScalarProperty Name="girisID" ColumnName="girisID" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="otoparkID" ColumnName="otoparkID" />
+          <ScalarProperty Name="aracPlaka" ColumnName="aracPlaka" />
+          <ScalarProperty Name="parkYeri" ColumnName="parkYeri" />
+          <ScalarProperty Name="girisSaati" ColumnName="girisSaati" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OTOPARKLAR">
+      <EntityTypeMapping TypeName="OYSModel.OTOPARKLAR">
+        <MappingFragment StoreEntitySet="OTOPARKLAR">
+          <ScalarProperty Name="otoparkID" ColumnName="otoparkID" />
+          <ScalarProperty Name="otoparkAdi" ColumnName="otoparkAdi" />
+          <ScalarProperty Name="otoparkAdres" ColumnName="otoparkAdres" />
+          <ScalarProperty Name="otoparkSahibi" ColumnName="otoparkSahibi" />
+          <ScalarProperty Name="otoparkKapasite" ColumnName="otoparkKapasite" />
+          <ScalarProperty Name="otoparkIBAN" ColumnName="otoparkIBAN" />
+          <ScalarProperty Name="ucretlendirme" ColumnName="ucretlendirme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARKYERLERI">
+      <EntityTypeMapping TypeName="OYSModel.PARKYERLERI">
+        <MappingFragment StoreEntitySet="PARKYERLERI">
+          <ScalarProperty Name="parkYeriID" ColumnName="parkYeriID" />
+          <ScalarProperty Name="otoparkID" ColumnName="otoparkID" />
+          <ScalarProperty Name="parkYeri" ColumnName="parkYeri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REZERVASYONLAR">
+      <EntityTypeMapping TypeName="OYSModel.REZERVASYONLAR">
+        <MappingFragment StoreEntitySet="REZERVASYONLAR">
+          <ScalarProperty Name="rezervasyonID" ColumnName="rezervasyonID" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="otoparkID" ColumnName="otoparkID" />
+          <ScalarProperty Name="aracPlaka" ColumnName="aracPlaka" />
+          <ScalarProperty Name="rezervasyonSaat" ColumnName="rezervasyonSaat" />
+          <ScalarProperty Name="parkYeri" ColumnName="parkYeri" />
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+          <ScalarProperty Name="rezarvasyonTarih" ColumnName="rezarvasyonTarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UCRETLER">
+      <EntityTypeMapping TypeName="OYSModel.UCRETLER">
+        <MappingFragment StoreEntitySet="UCRETLER">
+          <ScalarProperty Name="ucretID" ColumnName="ucretID" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="girisID" ColumnName="girisID" />
+          <ScalarProperty Name="cikisID" ColumnName="cikisID" />
+          <ScalarProperty Name="otoparkID" ColumnName="otoparkID" />
+          <ScalarProperty Name="ucretlendirme" ColumnName="ucretlendirme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UYELER">
+      <EntityTypeMapping TypeName="OYSModel.UYELER">
+        <MappingFragment StoreEntitySet="UYELER">
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="uyeAdi" ColumnName="uyeAdi" />
+          <ScalarProperty Name="uyeSoyadi" ColumnName="uyeSoyadi" />
+          <ScalarProperty Name="uyeEmail" ColumnName="uyeEmail" />
+          <ScalarProperty Name="uyeTelefon" ColumnName="uyeTelefon" />
+          <ScalarProperty Name="uyeKullaniciAdi" ColumnName="uyeKullaniciAdi" />
+          <ScalarProperty Name="uyeSifre" ColumnName="uyeSifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

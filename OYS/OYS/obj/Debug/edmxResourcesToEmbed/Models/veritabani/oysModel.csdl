@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OYSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CIKISLAR">
+    <Key>
+      <PropertyRef Name="cikisID" />
+    </Key>
+    <Property Name="cikisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uyeID" Type="Int32" Nullable="false" />
+    <Property Name="otoparkID" Type="Int32" Nullable="false" />
+    <Property Name="parkYeri" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="cikisSaati" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="aracPlaka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GECMISLER">
+    <Key>
+      <PropertyRef Name="gecmisID" />
+    </Key>
+    <Property Name="gecmisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uyeID" Type="Int32" />
+    <Property Name="otoparkID" Type="Int32" />
+    <Property Name="ucret" Type="Int32" />
+    <Property Name="girisSaati" Type="Time" Precision="7" />
+    <Property Name="cikisSaati" Type="Time" Precision="7" />
+    <Property Name="otoparkAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="otoparkAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GIRISLER">
+    <Key>
+      <PropertyRef Name="girisID" />
+    </Key>
+    <Property Name="girisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uyeID" Type="Int32" Nullable="false" />
+    <Property Name="otoparkID" Type="Int32" Nullable="false" />
+    <Property Name="aracPlaka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parkYeri" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="girisSaati" Type="Time" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="OTOPARKLAR">
+    <Key>
+      <PropertyRef Name="otoparkID" />
+    </Key>
+    <Property Name="otoparkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="otoparkAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="otoparkAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="otoparkSahibi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="otoparkKapasite" Type="Int32" />
+    <Property Name="otoparkIBAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ucretlendirme" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PARKYERLERI">
+    <Key>
+      <PropertyRef Name="parkYeriID" />
+    </Key>
+    <Property Name="parkYeriID" Type="Int32" Nullable="false" />
+    <Property Name="otoparkID" Type="Int32" Nullable="false" />
+    <Property Name="parkYeri" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REZERVASYONLAR">
+    <Key>
+      <PropertyRef Name="rezervasyonID" />
+    </Key>
+    <Property Name="rezervasyonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uyeID" Type="Int32" />
+    <Property Name="otoparkID" Type="Int32" />
+    <Property Name="aracPlaka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rezervasyonSaat" Type="Time" Precision="7" />
+    <Property Name="parkYeri" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ucret" Type="Int32" />
+    <Property Name="rezarvasyonTarih" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="UCRETLER">
+    <Key>
+      <PropertyRef Name="ucretID" />
+    </Key>
+    <Property Name="ucretID" Type="Int32" Nullable="false" />
+    <Property Name="uyeID" Type="Int32" />
+    <Property Name="girisID" Type="Int32" />
+    <Property Name="cikisID" Type="Int32" />
+    <Property Name="otoparkID" Type="Int32" />
+    <Property Name="ucretlendirme" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UYELER">
+    <Key>
+      <PropertyRef Name="uyeID" />
+    </Key>
+    <Property Name="uyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uyeAdi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="uyeSoyadi" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="uyeEmail" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="uyeTelefon" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="uyeKullaniciAdi" Type="String" MaxLength="12" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="uyeSifre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="oysEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CIKISLAR" EntityType="Self.CIKISLAR" />
+    <EntitySet Name="GECMISLER" EntityType="Self.GECMISLER" />
+    <EntitySet Name="GIRISLER" EntityType="Self.GIRISLER" />
+    <EntitySet Name="OTOPARKLAR" EntityType="Self.OTOPARKLAR" />
+    <EntitySet Name="PARKYERLERI" EntityType="Self.PARKYERLERI" />
+    <EntitySet Name="REZERVASYONLAR" EntityType="Self.REZERVASYONLAR" />
+    <EntitySet Name="UCRETLER" EntityType="Self.UCRETLER" />
+    <EntitySet Name="UYELER" EntityType="Self.UYELER" />
+  </EntityContainer>
+</Schema>
